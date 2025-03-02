@@ -11,11 +11,20 @@ import com.api.ApiRest.repository.IUserRepository;
 @Service
 public class UserService {
 
+    // Injecting the repository
     @Autowired
     IUserRepository userRepository;
 
+    // Method to get all users
     public ArrayList<User> getUsers() {
         return (ArrayList<User>) userRepository.findAll();
     }
+
+    // Method to save a user
+    public User saveUser(User user) {
+        return userRepository.save(user);
+    }
+
     
+
 }
