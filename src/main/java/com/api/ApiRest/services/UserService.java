@@ -25,6 +25,13 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    
-
+    // Method to delete a user by id
+    public Boolean deleteUserById(Long id) {
+        try {
+            userRepository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
